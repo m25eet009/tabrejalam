@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabrej Alam — Federated Learning &amp; Edge AI Research</title>
+<meta name="description" content="Tabrej Alam — M.Tech researcher at IIT Jodhpur working on federated learning, model compression and quantization for edge devices.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Background canvas (network nodes ambience) ===== -->
+<canvas id="net-canvas"></canvas>
+
+<!-- ===== Top progress / status bar ===== -->
+<div class="scroll-status" aria-hidden="true">
+  <div class="scroll-status__fill" id="scrollFill"></div>
+</div>
+
+<!-- ===== Nav ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <span class="nav__brand-mark">TA</span>
+      <span class="nav__brand-text">tabrej<span class="dim">.</span>alam</span>
+    </a>
+    <nav class="nav__links">
+      <a href="#about">about</a>
+      <a href="#research">research</a>
+      <a href="#projects">log</a>
+      <a href="#skills">stack</a>
+      <a href="#achievements">signal</a>
+      <a href="#contact">contact</a>
+    </nav>
+    <a href="#contact" class="nav__cta">connect&nbsp;node</a>
+    <button class="nav__burger" id="navBurger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== Mobile menu ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">about</a>
+  <a href="#research">research</a>
+  <a href="#projects">log</a>
+  <a href="#skills">stack</a>
+  <a href="#achievements">signal</a>
+  <a href="#contact">contact</a>
+</div>
+
+<main id="top">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> M.Tech · IIT Jodhpur · Round&nbsp;2025</p>
+        <h1 class="hero__title">
+          Compressing intelligence<br>
+          to fit on the <span class="hero__title-accent">edge.</span>
+        </h1>
+        <p class="hero__sub">
+          I'm Tabrej Alam — a federated learning researcher building communication-efficient
+          training systems for resource-constrained devices. My current work, <strong>EF&#8209;AdapSparseQ</strong>,
+          pushes adaptive quantization and error-feedback past fixed-precision baselines under
+          heavy non‑IID conditions.
+        </p>
+        <div class="hero__cta-row">
+          <a href="#research" class="btn btn--primary">View research <span class="btn__arrow">→</span></a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-num">8.92</span>
+            <span class="hero__stat-label">CGPA · M.Tech SIOT</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">7</span>
+            <span class="hero__stat-label">FL methods benchmarked</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-num">0.021</span>
+            <span class="hero__stat-label">EF buffer norm @ round 15</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__viz">
+        <svg id="fedSvg" viewBox="0 0 420 420" class="fed-svg" role="img" aria-label="Animated diagram of federated clients communicating with a central server">
+          <!-- populated / animated via JS, static structure below -->
+          <circle class="ring" cx="210" cy="210" r="170" />
+          <circle class="ring ring--inner" cx="210" cy="210" r="120" />
+        </svg>
+        <p class="hero__viz-caption">live render — client ↔ server gradient exchange</p>
+      </div>
+    </div>
+    <div class="hero__scroll-cue">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section__head">
+      <span class="section__tag">// 01 — about</span>
+      <h2 class="section__title">Background &amp; trajectory</h2>
+    </div>
+
+    <div class="about__grid">
+      <div class="about__text">
+        <p>
+          I'm currently pursuing my <strong>M.Tech in Electrical Engineering (Sensors &amp; IoT)</strong>
+          at the <strong>Indian Institute of Technology, Jodhpur</strong>, ranked 2nd in the ongoing
+          batch. My thesis sits at the intersection of <strong>federated learning</strong> and
+          <strong>model compression</strong> — specifically, how to quantize and sparsify gradient
+          updates so that edge devices with limited bandwidth and compute can still train collaboratively
+          without leaking raw data or collapsing under non‑IID conditions.
+        </p>
+        <p>
+          Before this, I completed my <strong>B.Tech in Computer Science &amp; Engineering</strong> at
+          HNB Garhwal University, where I built full‑stack web applications and explored applied
+          machine learning — a foundation that now shows up in how I engineer FL simulation pipelines
+          rather than just theorize about them.
+        </p>
+        <p>
+          I'm preparing my current results — <strong>EF‑AdapSparseQ</strong> — for presentation to my
+          thesis supervisor and for submission to <strong>IEEE Access</strong>, framed around
+          accuracy‑per‑bit gains under severe non‑IID data splits (α = 0.1).
+        </p>
+      </div>
+
+      <div class="about__timeline">
+        <div class="tl-item">
+          <span class="tl-year">2025 —</span>
+          <span class="tl-text">M.Tech (SIOT), IIT Jodhpur · CGPA 8.92 · Rank 2</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2025 —</span>
+          <span class="tl-text">Qualified GATE</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2021–25 —</span>
+          <span class="tl-text">B.Tech CSE, HNB Garhwal University · CGPA 7.67</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2020 —</span>
+          <span class="tl-text">Class XII, Jeevan Public School, Motihari</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-year">2018 —</span>
+          <span class="tl-text">Class X, St. Michael's Academy, Bettiah</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH ===== -->
+  <section class="section section--alt" id="research">
+    <div class="section__head">
+      <span class="section__tag">// 02 — research</span>
+      <h2 class="section__title">Federated learning, compressed</h2>
+      <p class="section__desc">
+        My thesis proposes <strong>EF‑AdapSparseQ</strong>, extending FedSparQ with three concrete
+        innovations aimed at communication-efficient, robust FL on edge hardware.
+      </p>
+    </div>
+
+    <div class="research__cards">
+      <article class="r-card">
+        <div class="r-card__num">01</div>
+        <h3 class="r-card__title">Adaptive layer-wise quantization</h3>
+        <p class="r-card__text">
+          4–8 bit integer precision per layer, chosen dynamically from gradient-norm history —
+          replacing FedSparQ's fixed FP16 scheme with something that actually responds to how
+          much each layer is changing.
+        </p>
+      </article>
+      <article class="r-card">
+        <div class="r-card__num">02</div>
+        <h3 class="r-card__title">Gradient-norm bit scheduling</h3>
+        <p class="r-card__text">
+          A coarse‑to‑fine bit-width schedule driven by gradient-norm trends, so early noisy
+          rounds spend fewer bits and later, more meaningful updates get more precision.
+        </p>
+      </article>
+      <article class="r-card">
+        <div class="r-card__num">03</div>
+        <h3 class="r-card__title">Per-client error-feedback buffers</h3>
+        <p class="r-card__text">
+          Each client retains its own EF buffer to carry forward quantization error, preventing
+          gradient drift under heavy non‑IID partitioning.
+        </p>
+      </article>
+    </div>
+
+    <div class="research__panel">
+      <div class="research__panel-left">
+        <h3>Validated result</h3>
+        <p>
+          Error-feedback buffer norm converges near zero (<strong>~0.021 at round 15</strong>)
+          versus FedSparQ's persistent oscillation (<strong>~0.23</strong>) — empirically
+          supporting the convergence theorem behind the method.
+        </p>
+        <ul class="research__taglist">
+          <li>LeNet‑5 on CIFAR‑10</li>
+          <li>Dirichlet non‑IID, α = 0.1 / 0.5 / 1.0</li>
+          <li>vs. FedAvg, QSGD, Top‑K, FedPAQ, FedProx, FedSparQ</li>
+        </ul>
+      </div>
+      <div class="research__panel-right">
+        <svg viewBox="0 0 360 220" class="chart-svg" role="img" aria-label="Chart comparing EF buffer norm convergence between EF-AdapSparseQ and FedSparQ">
+          <line x1="30" y1="190" x2="340" y2="190" class="chart-axis"/>
+          <line x1="30" y1="190" x2="30" y2="20" class="chart-axis"/>
+          <text x="14" y="195" class="chart-label">0</text>
+          <text x="6" y="30" class="chart-label">0.3</text>
+          <text x="180" y="212" class="chart-label">communication round</text>
+
+          <!-- FedSparQ oscillating line -->
+          <polyline class="chart-line chart-line--ghost"
+            points="40,80 60,60 80,95 100,55 120,90 140,58 160,92 180,57 200,88 220,60 240,90 260,58 280,86 300,60 320,88"/>
+          <text x="250" y="48" class="chart-tag chart-tag--ghost">FedSparQ</text>
+
+          <!-- EF-AdapSparseQ converging line -->
+          <polyline class="chart-line chart-line--accent"
+            points="40,150 60,140 80,125 100,110 120,98 140,90 160,182 180,184 200,185 220,186 240,186 260,187 280,187 300,187 320,188"/>
+          <text x="225" y="170" class="chart-tag chart-tag--accent">EF‑AdapSparseQ</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS / LOG ===== -->
+  <section class="section" id="projects">
+    <div class="section__head">
+      <span class="section__tag">// 03 — build log</span>
+      <h2 class="section__title">Things I've shipped</h2>
+    </div>
+
+    <div class="log">
+      <article class="log__item">
+        <div class="log__meta">
+          <span class="log__dot"></span>
+          <span class="log__type">applied ml · vision</span>
+        </div>
+        <h3 class="log__title">Motor speed control via computer vision</h3>
+        <p class="log__text">
+          Real-time gesture and color-based motor control. Hand detection at 120ms, color
+          detection at 85ms — 95% gesture accuracy, 92% color-detection accuracy.
+        </p>
+        <div class="log__chips">
+          <span>Python</span><span>OpenCV</span><span>Real-time CV</span>
+        </div>
+      </article>
+
+      <article class="log__item">
+        <div class="log__meta">
+          <span class="log__dot"></span>
+          <span class="log__type">applied ml · nlp</span>
+        </div>
+        <h3 class="log__title">E-mail spam detection system</h3>
+        <p class="log__text">
+          Classical ML pipeline using Python and Scikit-learn, reaching 92% classification
+          accuracy on spam vs. legitimate mail.
+        </p>
+        <div class="log__chips">
+          <span>Python</span><span>Scikit-learn</span><span>NLP</span>
+        </div>
+      </article>
+
+      <article class="log__item">
+        <div class="log__meta">
+          <span class="log__dot"></span>
+          <span class="log__type">full‑stack</span>
+        </div>
+        <h3 class="log__title">Event management system</h3>
+        <p class="log__text">
+          Web application for managing events, bookings and schedules end‑to‑end, improving
+          event scheduling efficiency by roughly 40%.
+        </p>
+        <div class="log__chips">
+          <span>HTML/CSS</span><span>JavaScript</span><span>MySQL</span>
+        </div>
+      </article>
+
+      <article class="log__item">
+        <div class="log__meta">
+          <span class="log__dot"></span>
+          <span class="log__type">tools</span>
+        </div>
+        <h3 class="log__title">GUI scientific calculator</h3>
+        <p class="log__text">
+          A desktop scientific calculator built with a Python GUI toolkit — clean operator
+          precedence handling and a no-frills interface.
+        </p>
+        <div class="log__chips">
+          <span>Python</span><span>Tkinter</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS / STACK ===== -->
+  <section class="section section--alt" id="skills">
+    <div class="section__head">
+      <span class="section__tag">// 04 — stack</span>
+      <h2 class="section__title">Tooling that compiles, trains, and ships</h2>
+    </div>
+
+    <div class="stack__grid">
+      <div class="stack__col">
+        <h3 class="stack__col-title">Languages</h3>
+        <div class="tag-row">
+          <span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span>
+          <span class="tag">Java</span><span class="tag">Verilog</span><span class="tag">SystemVerilog</span>
+        </div>
+      </div>
+      <div class="stack__col">
+        <h3 class="stack__col-title">Web</h3>
+        <div class="tag-row">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
+        </div>
+      </div>
+      <div class="stack__col">
+        <h3 class="stack__col-title">Data</h3>
+        <div class="tag-row">
+          <span class="tag">MySQL</span><span class="tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="stack__col">
+        <h3 class="stack__col-title">Tools &amp; platforms</h3>
+        <div class="tag-row">
+          <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">VS Code</span>
+          <span class="tag">Vivado</span><span class="tag">EDA Playground</span><span class="tag">Keil</span>
+          <span class="tag">MATLAB</span><span class="tag">Google Colab</span><span class="tag">PyTorch</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="interests">
+      <span class="interests__label">research interests —</span>
+      <span class="interests__item">Federated Learning for IoT</span>
+      <span class="interests__sep">/</span>
+      <span class="interests__item">Full-Stack Development</span>
+      <span class="interests__sep">/</span>
+      <span class="interests__item">Timing Analysis of RTL</span>
+    </div>
+  </section>
+
+  <!-- ===== ACHIEVEMENTS / SIGNAL ===== -->
+  <section class="section" id="achievements">
+    <div class="section__head">
+      <span class="section__tag">// 05 — signal</span>
+      <h2 class="section__title">Achievements</h2>
+    </div>
+
+    <div class="signal__grid">
+      <div class="signal__card">
+        <div class="signal__icon">2<sup>nd</sup></div>
+        <p>Currently ranked 2nd in the ongoing M.Tech SIOT programme at IIT Jodhpur</p>
+      </div>
+      <div class="signal__card">
+        <div class="signal__icon">✓</div>
+        <p>Qualified GATE 2025</p>
+      </div>
+      <div class="signal__card">
+        <div class="signal__icon">⟁</div>
+        <p>Graph Theory Programming Camp Certificate — AlgoUniversity</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section section--contact" id="contact">
+    <div class="contact__inner">
+      <span class="section__tag">// 06 — connect</span>
+      <h2 class="contact__title">Let's exchange gradients.<br>(or just talk research.)</h2>
+      <p class="contact__sub">
+        Open to discussions on federated learning, edge AI, model compression, or full-stack
+        collaboration. Reach out directly — no intermediary server required.
+      </p>
+
+      <div class="contact__grid">
+        <a href="mailto:m25eet009@iitj.ac.in" class="contact__card">
+          <span class="contact__card-label">email</span>
+          <span class="contact__card-value">m25eet009@iitj.ac.in</span>
+        </a>
+        <a href="tel:+916204765522" class="contact__card">
+          <span class="contact__card-label">phone</span>
+          <span class="contact__card-value">+91&nbsp;6204&nbsp;765522</span>
+        </a>
+        <a href="https://www.linkedin.com/in/tabrej-alam0178/" target="_blank" rel="noopener" class="contact__card">
+          <span class="contact__card-label">linkedin</span>
+          <span class="contact__card-value">/in/tabrej-alam0178</span>
+        </a>
+        <div class="contact__card contact__card--static">
+          <span class="contact__card-label">based at</span>
+          <span class="contact__card-value">IIT Jodhpur, Rajasthan, India</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Tabrej Alam. Built node by node.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
