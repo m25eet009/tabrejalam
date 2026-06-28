@@ -4,7 +4,37 @@
    Palette: ink graphite ground, signal-cyan + amber-LED accents
    Type: Space Grotesk (display) + JetBrains Mono (data/labels)
    ============================================================ */
+.nav__brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
 
+.nav__brand-img{
+    width:41px;
+    height:42px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid rgba(255,255,255,.15);
+    transition:.3s ease;
+    flex-shrink:0;
+}
+
+.nav__brand-img:hover{
+    transform:scale(1.08);
+    border-color:#00e5ff;
+}
+
+.nav__brand-text{
+    font-size:1.15rem;
+    font-weight:700;
+    color:#fff;
+}
+
+.nav__brand-text .dim{
+    color:#00e5ff;
+}
 :root {
   /* --- color tokens --- */
   --ink-950: #0a0c10;
